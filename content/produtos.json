@@ -14,7 +14,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, bacon, tomate e orégano",
-      "image": "/imagens/bacon.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Mussarela (G)",
@@ -22,7 +22,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, requeijão, cheddar e orégano",
-      "image": "/imagens/mussarela.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Frango (G)",
@@ -30,7 +30,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, frango, requeijão e orégano",
-      "image": "/imagens/frango.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Baiana (G)",
@@ -38,7 +38,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, cebola, pimentão, molho de pimenta, calabresa e orégano",
-      "image": "/imagens/baiana.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Calabresa (G)",
@@ -46,7 +46,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, calabresa e orégano",
-      "image": "/imagens/calabresa.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Calabresa c/ Cebola (G)",
@@ -54,7 +54,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, calabresa, cebola e orégano",
-      "image": "/imagens/calabresa-cebola.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Kartofel (G)",
@@ -62,7 +62,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, batata, bacon, requeijão e orégano",
-      "image": "/imagens/kartofel.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Lombo Canadense (G)",
@@ -70,7 +70,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, lombo canadense, requeijão e orégano",
-      "image": "/imagens/lombo.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Toscana (G)",
@@ -78,7 +78,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza",
       "ingredientes": "Mussarela, bacon, calabresa e orégano",
-      "image": "/imagens/toscana.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Havaiana - Doce (G)",
@@ -86,7 +86,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza-doce",
       "ingredientes": "Chocolate branco, abacaxi e morango",
-      "image": "/imagens/havaiana.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Brasileira - Doce (G)",
@@ -94,7 +94,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza-doce",
       "ingredientes": "Chocolate preto, abacaxi e morango",
-      "image": "/imagens/brasileira.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Sensação - Doce (G)",
@@ -102,7 +102,7 @@
       "oldPrice": 100.0,
       "categoria": "pizza-doce",
       "ingredientes": "Chocolate preto e morango",
-      "image": "/imagens/sensacao.jpeg"
+      "image": "/imagens/pizza.jpg"
     },
     {
       "title": "Pizza Banana Nevada - Doce (G)",
@@ -110,8 +110,9 @@
       "oldPrice": 100.0,
       "categoria": "pizza-doce",
       "ingredientes": "Chocolate branco, banana e canela",
-      "image": "/imagens/banana-nevada.jpeg"
+      "image": "/imagens/pizza.jpg"
     }
   ]
 }
+
 
