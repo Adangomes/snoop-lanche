@@ -1,54 +1,116 @@
 {
-    "produtos": [{
-            "title": "Kings Burger Tradicional",
-            "price": 19.9,
-            "oldPrice": 24.9,
-            "categoria": "burger",
-            "ingredientes": "Hambúrguer artesanal 140g, duas fatias de queijo e pão brioche",
-            "image": "/imagens/kingstradicional.jpeg"
-        },
-        {
-            "title": "Kings Duplo Bacon",
-            "price": 29.9,
-            "categoria": "burger",
-            "ingredientes": "Dois hambúrgueres artesanais de 100g cada, queijo derretido, bacon crocante e pão brioche",
-            "image": "/imagens/kingsduplo.jpeg",
-            "oldPrice": 34.9
-        },
-        {
-            "title": "Kings Calabresa",
-            "price": 31,
-            "categoria": "burger",
-            "ingredientes": "Hambúrguer artesanal 140g, calabresa grelhada, queijo e pão brioche",
-            "image": "/imagens/kingscalabresa.jpeg"
-        },
-        {
-            "title": "Coca-Cola Lata",
-            "price": 6.9,
-            "categoria": "bebida",
-            "ingredientes": "350ml",
-            "image": "/imagens/cocalata.jpeg"
-        },
-        {
-            "title": "Guaraná Lata",
-            "price": 6.5,
-            "categoria": "bebida",
-            "ingredientes": "350ml",
-            "image": "/imagens/guarana.jpeg"
-        },
-        {
-            "title": "Coca-Cola 600ml",
-            "price": 8.5,
-            "categoria": "bebida",
-            "ingredientes": "600ml",
-            "image": "/imagens/coca600.jpg"
-        },
-        {
-            "image": "/imagens/kingsclassic.jpeg",
-            "title": "kings burger classic",
-            "price": 28,
-            "categoria": "burger",
-            "ingredientes": "hamburguer artesanal 150g, queijo prato, pão brioche"
-        }
-    ]
+  "produtos": [
+    {
+      "title": "Pizza Portuguesa (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, presunto, ovo, cebola e orégano",
+      "image": "/imagens/portuguesa.jpeg"
+    },
+    {
+      "title": "Pizza Bacon (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, bacon, tomate e orégano",
+      "image": "/imagens/bacon.jpeg"
+    },
+    {
+      "title": "Pizza Mussarela (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, requeijão, cheddar e orégano",
+      "image": "/imagens/mussarela.jpeg"
+    },
+    {
+      "title": "Pizza Frango (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, frango, requeijão e orégano",
+      "image": "/imagens/frango.jpeg"
+    },
+    {
+      "title": "Pizza Baiana (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, cebola, pimentão, molho de pimenta, calabresa e orégano",
+      "image": "/imagens/baiana.jpeg"
+    },
+    {
+      "title": "Pizza Calabresa (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, calabresa e orégano",
+      "image": "/imagens/calabresa.jpeg"
+    },
+    {
+      "title": "Pizza Calabresa c/ Cebola (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, calabresa, cebola e orégano",
+      "image": "/imagens/calabresa-cebola.jpeg"
+    },
+    {
+      "title": "Pizza Kartofel (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, batata, bacon, requeijão e orégano",
+      "image": "/imagens/kartofel.jpeg"
+    },
+    {
+      "title": "Pizza Lombo Canadense (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, lombo canadense, requeijão e orégano",
+      "image": "/imagens/lombo.jpeg"
+    },
+    {
+      "title": "Pizza Toscana (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza",
+      "ingredientes": "Mussarela, bacon, calabresa e orégano",
+      "image": "/imagens/toscana.jpeg"
+    },
+    {
+      "title": "Pizza Havaiana - Doce (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza-doce",
+      "ingredientes": "Chocolate branco, abacaxi e morango",
+      "image": "/imagens/havaiana.jpeg"
+    },
+    {
+      "title": "Pizza Brasileira - Doce (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza-doce",
+      "ingredientes": "Chocolate preto, abacaxi e morango",
+      "image": "/imagens/brasileira.jpeg"
+    },
+    {
+      "title": "Pizza Sensação - Doce (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza-doce",
+      "ingredientes": "Chocolate preto e morango",
+      "image": "/imagens/sensacao.jpeg"
+    },
+    {
+      "title": "Pizza Banana Nevada - Doce (G)",
+      "price": 90.0,
+      "oldPrice": 100.0,
+      "categoria": "pizza-doce",
+      "ingredientes": "Chocolate branco, banana e canela",
+      "image": "/imagens/banana-nevada.jpeg"
+    }
+  ]
 }
