@@ -1,0 +1,599 @@
+    /* ============================= */
+    /* RESET + BASE */
+    /* ============================= */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    body {
+        background: #f4f5f7;
+        color: #1c1c1c;
+    }
+    /* ============================= */
+    /* SPLASH */
+    /* ============================= */
+    /* ============================= */
+    /* ============================= */
+    /* SPLASH SCREEN PROFISSIONAL */
+    /* ============================= */
+    
+    #splash {
+        position: fixed;
+        inset: 0;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        overflow: hidden;
+    }
+    /* IMAGEM */
+    
+    .splash-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* ocupa tudo no celular */
+        animation: splashZoom 4s ease-in-out infinite alternate;
+    }
+    /* OVERLAY ESCURO LEVE (CARA DE APP) */
+    
+    #splash::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    /* ANIMAÇÃO SUAVE */
+    
+    @keyframes splashZoom {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.08);
+        }
+    }
+    /* ============================= */
+    /* HEADER */
+    /* ============================= */
+    
+    .header {
+        position: sticky;
+        top: 0;
+        background: #111;
+        color: #fff;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+    
+    .logo {
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: 1px;
+    }
+    
+    .cart {
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+    /* ============================= */
+    /* MENU MOBILE */
+    /* ============================= */
+    
+    .hamburger {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+    
+    .menu {
+        position: absolute;
+        top: 62px;
+        right: 12px;
+        background: #111;
+        border-radius: 14px;
+        display: none;
+        flex-direction: column;
+        min-width: 170px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, .45);
+        overflow: hidden;
+    }
+    
+    .menu.open {
+        display: flex;
+    }
+    
+    .menu a {
+        color: #fff;
+        text-decoration: none;
+        padding: 14px;
+        font-size: .85rem;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+    
+    .menu a:last-child {
+        border-bottom: none;
+    }
+    /* ============================= */
+    /* PRODUTOS */
+    /* ============================= */
+    
+    .secao {
+        padding: 16px;
+    }
+    
+    .cards,
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+        gap: 14px;
+    }
+    
+    .card-produto {
+        background: #fff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-produto img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+    }
+    
+    .card-produto h3 {
+        font-size: .95rem;
+        padding: 10px 12px 0;
+        font-weight: 600;
+    }
+    
+    .card-produto p {
+        font-size: .75rem;
+        padding: 4px 12px;
+        color: #666;
+    }
+    
+    .card-produto strong {
+        padding: 0 12px;
+        margin-top: auto;
+        font-size: 1rem;
+    }
+    
+    .card-produto button {
+        margin: 12px;
+        padding: 12px;
+        border-radius: 14px;
+        background: #111;
+        color: #fff;
+        border: none;
+        font-size: .85rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    /* ============================= */
+    /* MODAIS */
+    /* ============================= */
+    
+    #cart-modal,
+    #delivery-modal,
+    #loading-taxa {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    }
+    /* ============================= */
+    /* BOXES */
+    /* ============================= */
+    
+    .cart-box,
+    .delivery-box {
+        background: #fff;
+        width: 95%;
+        max-width: 420px;
+        border-radius: 22px;
+        padding: 18px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    /* ============================= */
+    /* CARRINHO */
+    /* ============================= */
+    
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cart-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .cart-header button {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+    }
+    
+    #cart-items div {
+        display: flex;
+        justify-content: space-between;
+        font-size: .85rem;
+        margin-bottom: 8px;
+    }
+    
+    .summary p {
+        font-size: .9rem;
+        margin: 6px 0;
+    }
+    /* ============================= */
+    /* BOTÕES */
+    /* ============================= */
+    
+    .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+    }
+    
+    .buttons button {
+        flex: 1;
+        padding: 13px;
+        border-radius: 16px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    
+    .buttons button:first-child {
+        background: #e5e5e5;
+    }
+    
+    .buttons button:last-child {
+        background: #111;
+        color: #fff;
+    }
+    /* ============================= */
+    /* FORM ENTREGA */
+    /* ============================= */
+    
+    .delivery-box label {
+        font-size: .75rem;
+        margin-top: 10px;
+        display: block;
+    }
+    
+    .delivery-box input,
+    .delivery-box select,
+    .delivery-box textarea {
+        width: 100%;
+        padding: 11px;
+        border-radius: 14px;
+        border: 1px solid #ddd;
+        margin-top: 4px;
+        font-size: .85rem;
+    }
+    /* ============================= */
+    /* LOADING TAXA */
+    /* ============================= */
+    /* ============================= */
+    /* RESUMO */
+    /* ============================= */
+    /* ============================= */
+    /* RESUMO DENTRO DO CARD DE ENDEREÇO */
+    /* ============================= */
+    
+    #resumo-pedido {
+        background: #fff;
+        /* branco para se destacar */
+        border-radius: 18px;
+        /* arredondado igual ao card */
+        padding: 16px;
+        /* espaçamento interno */
+        margin-top: 12px;
+        /* pequeno espaço em relação aos inputs */
+        width: 100%;
+        /* ocupa toda largura do card */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        /* sombra suave */
+        position: relative;
+        /* importante para que loading fique relativo */
+        z-index: 1;
+        /* abaixo do loading */
+    }
+    /* Loading taxa dentro do mesmo card */
+    /* ============================= */
+    /* CONTATO */
+    /* ============================= */
+    
+    .destaques {
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+    
+    .destaques h2 {
+        margin-bottom: 10px;
+    }
+    
+    .destaques p {
+        color: #555;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 14px 20px;
+        border-radius: 14px;
+        background: #111;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 10px;
+    }
+    /* ============================= */
+    /* FOOTER */
+    /* ============================= */
+    
+    .footer {
+        text-align: center;
+        padding: 14px;
+        font-size: .7rem;
+        color: #777;
+    }
+    /* ============================= */
+    /* CARRINHO ANIMADO */
+    /* ============================= */
+    
+    .cart.bounce {
+        animation: bounce 0.5s ease;
+    }
+    
+    @keyframes bounce {
+        0% {
+            transform: scale(1);
+        }
+        30% {
+            transform: scale(1.15);
+        }
+        60% {
+            transform: scale(0.95);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    /* ============================= */
+    /* TOAST CENTRAL */
+    /* ============================= */
+    /* ============================= */
+    /* TOAST CENTRAL (DISCRETO) */
+    /* ============================= */
+    /* ============================= */
+    /* TOAST CENTRAL (DISCRETO E VISÍVEL EM QUALQUER FUNDO) */
+    /* ============================= */
+    /* TOAST CENTRAL (DISCRETO E VISÍVEL EM QUALQUER FUNDO) */
+    /* ============================= */
+    
+    .toast {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        background: rgba(255, 255, 255, 0.9);
+        /* fundo discreto */
+        color: #111;
+        padding: 14px 20px;
+        border-radius: 14px !important;
+        /* força o arredondamento igual em todas as páginas */
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0;
+        z-index: 9999;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transition: all 0.35s ease;
+    }
+    
+    .toast.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    /* RESET DE CONFLITOS */
+    /* LOADING CLEAN - SÓ O CÍRCULO */
+    /* LOADING CLEAN - CENTRALIZAÇÃO TOTAL */
+    /* AJUSTE DO RESUMO PARA NÃO SAIR DA CAIXA */
+    
+    #resumo-pedido {
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        display: none;
+        /* JS controla */
+    }
+    
+    #resumo-itens p {
+        margin-bottom: 5px;
+        color: #444;
+    }
+    /* Garante que o modal ocupe a largura correta sem transbordar */
+    
+    .modal-content {
+        width: 90% !important;
+        /* Ocupa 90% da largura da tela */
+        max-width: 400px;
+        /* Não deixa ficar gigante em telas maiores */
+        margin: 0 auto;
+        /* Centraliza horizontalmente */
+        position: fixed;
+        /* Mantém ele fixo em relação à tela */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Centralização perfeita no meio da tela */
+        box-sizing: border-box;
+        overflow-x: hidden;
+        /* Impede qualquer rolagem lateral estranha */
+    }
+    /* Ajuste nos inputs para não causarem zoom no iPhone */
+    
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+        /* Se a fonte for menor que 16px, o iOS dá zoom automático */
+    }
+    /* ================================================== */
+    /* LOADING TAXA - VERSÃO FINAL UNIFICADA */
+    /* ================================================== */
+    
+    #loading-taxa {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(4px);
+        display: none;
+        /* Controlado pelo JS */
+        align-items: center;
+        justify-content: center;
+        z-index: 99999 !important;
+        pointer-events: all;
+    }
+    
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #000000;
+        border-radius: 50%;
+        animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    /* ============================= */
+    /* ============================================================ */
+    /* STATUS (ABERTO/FECHADO) - AJUSTE FINAL DE ALINHAMENTO        */
+    /* ============================================================ */
+    
+    .status {
+        /* MODO LIVRE: Ele flutua sobre os outros elementos */
+        position: absolute !important;
+        /* DISTÂNCIA DO TOPO: Aumente para descer */
+        top: 43px;
+        /* DISTÂNCIA DA ESQUERDA: 0 ou 5px cola no canto */
+        left: 15px;
+        /* ESTILO DO TEXTO */
+        display: block !important;
+        font-size: 14px;
+        font-weight: 900;
+        text-transform: uppercase;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0;
+        letter-spacing: -0.5px;
+    }
+    
+    .status.aberto {
+        color: #2ecc71 !important;
+    }
+    
+    .status.fechado {
+        color: #e74c3c !important;
+    }
+    /* ============================= */
+    /* CONTAINER DE PREÇO            */
+    /* CONTAINER DE PREÇO - ALINHAMENTO LADO A LADO */
+    
+    .price-container {
+        padding: 0 16px;
+        display: flex;
+        flex-direction: row;
+        /* Força ficar na mesma linha */
+        align-items: baseline;
+        /* Alinha os textos pela base (chão da letra) */
+        gap: 6px;
+        /* Espaço curto entre o preço novo e o antigo */
+        height: 35px;
+        margin-bottom: 10px;
+    }
+    /* PREÇO ATUAL (DESTAQUE) */
+    
+    .price-container strong {
+        font-size: 1.1rem;
+        /* Um pouco menor para garantir que caiba tudo */
+        color: #000;
+        white-space: nowrap;
+        /* Não deixa o preço quebrar linha */
+    }
+    /* PREÇO ANTIGO (BEM PEQUENO E DISCRETO) */
+    /* ============================================================ */
+    /* AJUSTE SOMENTE DO VALOR ANTIGO (RISCADO)                     */
+    /* ============================================================ */
+    
+    .old-price {
+        text-decoration: line-through;
+        color: #999;
+        font-weight: 400;
+        font-size: 0.8rem;
+        /* Tamanho reduzido como pedido */
+        white-space: nowrap;
+        /* AJUSTE DE ALTURA: */
+        display: inline-block;
+        /* Necessário para o movimento funcionar */
+        /* Aumente o valor (ex: 2px, 3px) para DESCER o preço riscado */
+        /* Diminua ou use negativo (ex: -1px) para SUBIR */
+        transform: translateY(13px);
+    }
+    /* ============================= */
+    /* CARD E BOTÃO (SEM ALTERAÇÃO)  */
+    /* ============================= */
+    
+    .card-produto {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .card-produto button {
+        width: calc(100% - 32px);
+        margin: 0 16px 16px 16px;
+        padding: 12px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+    }
+    
+    .card-produto button:active {
+        transform: scale(0.98);
+    }

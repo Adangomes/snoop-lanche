@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "imagens"
+public_folder: "/imagens"
+
+collections:
+  - name: "produtos"
+    label: "Produtos"
+    files:
+      - file: "content/produtos.json"
+        label: "Lista de Produtos"
+        name: "lista"
+        fields:
+          - label: "Produtos"
+            name: "produtos"
+            widget: "list"
+            fields:
+              - { label: "Nome", name: "title", widget: "string" }
+              - { label: "Preço Atual", name: "price", widget: "number", value_type: "float" }
+              - { label: "Preço Antigo (Para Desconto)", name: "oldPrice", widget: "number", value_type: "float", required: false }
+              - { label: "Categoria", name: "categoria", widget: "select", options: ["burger", "bebida"] }
+              - { label: "Ingredientes", name: "ingredientes", widget: "string", required: false }
+              - { label: "Imagem", name: "image", widget: "image" }
+
+  - name: "status-loja"
+    label: "Status da Loja"
+    files:
+      - file: "content/status.json"
+        label: "Configuração da Loja"
+        name: "config-loja"
+        fields:
+          - { label: "Aberto", name: "aberto", widget: "boolean" }
+          - { label: "Mensagem do Status (Ex: ABERTO ou FECHADO)", name: "mensagem", widget: "string" }

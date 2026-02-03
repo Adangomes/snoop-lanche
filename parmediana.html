@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bebidas</title>
+
+    <!-- Bootstrap (mesmo do index) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+
+
+    <!-- LOADING TAXA -->
+    <div id="loading-taxa" style="display:none" class="loading">
+        <div class="spinner"></div>
+        <p>Calculando taxa...</p>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div id="menu">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">KINGS BURGUER</div>
+            <div id="status-loja" class="status"></div>
+
+            <button class="hamburger" id="hamburger">&#9776;</button>
+
+            <nav class="menu" id="mobile-menu">
+                <a href="index.html">HAMBÚRGUERES</a>
+                <a href="bebidas.html">BEBIDAS</a>
+                <a href="contato.html">CONTATO</a>
+            </nav>
+
+            <div class="cart" onclick="abrirCarrinho()">🛒</div>
+        </header>
+
+        <!-- SEÇÃO BEBIDAS -->
+        <section class="secao">
+            <div class="products-grid" id="bebidas"></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>Sistema Desenvolvido por Adan Gomes</p>
+        </footer>
+    </div>
+
+    <!-- ===================== -->
+    <!-- MODAL CARRINHO -->
+    <!-- ===================== -->
+    <div id="cart-modal" style="display:none;">
+        <div class="cart-box">
+            <div class="cart-header">
+                <h2>Meu Carrinho</h2>
+                <button onclick="fecharCarrinho()">X</button>
+            </div>
+
+            <div id="cart-items"></div>
+
+            <div class="summary">
+                <p id="subtotal">Subtotal: R$0,00</p>
+                <p><strong id="total">Total: R$0,00</strong></p>
+            </div>
+
+            <div class="buttons">
+                <button onclick="fecharCarrinho()">Continuar</button>
+                <button onclick="abrirDelivery()">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- MODAL ENTREGA -->
+    <div id="delivery-modal" style="display:none;">
+        <div class="delivery-box">
+
+            <div id="form-entrega">
+                <h2>Informações de Entrega</h2>
+
+                <label>Nome:</label>
+                <input type="text" id="nomeCliente" placeholder="Seu nome">
+
+                <label>Cidade:</label>
+                <select id="cidade">
+                <option value="">Selecione</option>
+                <option value="Jaraguá do Sul">Jaraguá do Sul</option>
+                <option value="Guaramirim">Guaramirim</option>
+            </select>
+
+                <label>Bairro:</label>
+                <input type="text" id="bairro" placeholder="Ex: Centro">
+
+                <label>Rua:</label>
+                <input type="text" id="rua" placeholder="Nome da rua">
+
+                <label>Número:</label>
+                <input type="text" id="numero" placeholder="123">
+
+                <label>Observações:</label>
+                <textarea id="observacao" placeholder="Ex: Casa de fundos"></textarea>
+
+                <label>Pagamento:</label>
+                <select id="pagamento">
+                <option value="">Selecione</option>
+                <option value="Pix">Pix</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Cartão">Cartão</option>
+            </select>
+
+                <div class="buttons">
+                    <button onclick="fecharDelivery()">Voltar</button>
+                    <button onclick="mostrarResumo()">Próximo</button>
+                </div>
+            </div>
+
+            <div id="resumo-pedido" style="display:none;">
+                <h2 style="margin-bottom: 15px;">Resumo do Pedido</h2>
+                <div id="resumo-itens" style="font-size: 0.9rem; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"></div>
+                <p id="resumo-taxa" style="font-weight: 500; margin-bottom: 5px;"></p>
+                <p id="resumo-total" style="font-size: 1.2rem; font-weight: 700; color: #111;"></p>
+
+                <div class="buttons" style="margin-top: 20px;">
+                    <button onclick="voltarParaDados()">Voltar</button>
+                    <button onclick="finalizarEntrega()">Finalizar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-taxa" style="display:none;">
+        <div class="spinner"></div>
+        <p style="font-weight: 600; color: #fff;">Calculando taxa...</p>
+    </div>
+
+    <!-- TOAST CENTRAL -->
+    <div id="toast" class="toast">
+        ✅ Produto adicionado ao carrinho
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXA1yP1F-riNkzOX5zJs5gsQ82EzsT7Qg",
+            authDomain: "myproject26-10f0e.firebaseapp.com",
+            databaseURL: "https://myproject26-10f0e-default-rtdb.firebaseio.com",
+            projectId: "myproject26-10f0e",
+            storageBucket: "myproject26-10f0e.firebasestorage.app",
+            messagingSenderId: "884850608032",
+            appId: "1:884850608032:web:79db6983346c3c20edc6c5"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        // CRIAMOS A VARIÁVEL 'db' GLOBAL PARA O SCRIPT.JS USAR
+        window.db = firebase.database();
+    </script>
+
+    <script src="script.js"></script>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

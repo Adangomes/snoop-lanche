@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="admin.css"> </head>
+
+<body>
+
+    <div id="painel-pedidos">
+        <h2>Novos Pedidos</h2>
+        <ul id="pedidos-container" style="padding: 0; list-style: none;"></ul>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXA1yP1F-riNkzOX5zJs5gsQ82EzsT7Qg",
+            authDomain: "myproject26-10f0e.firebaseapp.com",
+            databaseURL: "https://myproject26-10f0e-default-rtdb.firebaseio.com",
+            projectId: "myproject26-10f0e",
+            storageBucket: "myproject26-10f0e.firebasestorage.app",
+            messagingSenderId: "884850608032",
+            appId: "1:884850608032:web:79db6983346c3c20edc6c5"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        db.ref('pedidos').on('child_added', (snapshot) => {
+            const pedido = snapshot.val();
+            const container = document.getElementById('pedidos-container');
+
+            let itensHtml = Array.isArray(pedido.itens) ?
+                pedido.itens.map(i => `<div class="item-linha"><span>${i.qtd}x ${i.produto}</span></div>`).join('') :
+                pedido.itens;
+
+            const li = document.createElement('li');
+            li.className = 'pedido-card';
+            li.innerHTML = `
+                <h3> ${pedido.cliente}</h3>
+                <div class="info-entrega"> ${pedido.endereco}</div>
+                <div class="itens-lista">
+                    <strong>Itens:</strong><br>
+                    ${itensHtml}
+                </div>
+                
+                <div style="margin-top: 10px; border-top: 1px dashed #ccc; padding-top: 10px;">
+                    <div><strong>Obs:</strong> ${pedido.observacao || 'Nenhuma'}</div>
+                    <div style="font-size: 0.9em; margin-top: 5px;">Taxa Entrega: R$ ${(pedido.taxaEntrega || 0).toFixed(2).replace('.', ',')}</div>
+                    <div class="total-container" style="font-weight: bold; font-size: 1.2em;">TOTAL: R$ ${(pedido.total || 0).toFixed(2).replace('.', ',')}</div>
+                </div>
+
+                <small> ${new Date(pedido.data).toLocaleTimeString('pt-BR')}</small>
+                <br>
+                <button class="btn-imprimir" onclick="window.print()"> Imprimir Pedido</button>
+            `;
+
+            container.prepend(li);
+
+            // Som de Alerta (Digital Watch Alarm)
+            const som = new Audio('https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg');
+            som.volume = 1.0;
+            som.play().catch(() => console.log("Clique na tela para liberar o som."));
+        });
+    </script>
+</body>
+
+</html>

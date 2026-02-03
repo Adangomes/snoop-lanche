@@ -1,0 +1,131 @@
+/* Configurações Gerais */
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+    padding: 20px;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #ffcc00;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#lista-pedidos {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+
+/* Card do Pedido - VOLTOU AO ESCURO */
+
+.pedido-card {
+    background: #1e1e1e;
+    border-left: 6px solid #ffcc00;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    list-style: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease-out, piscarBorda 1.5s infinite alternate;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes piscarBorda {
+    from {
+        border-left-color: #ffcc00;
+    }
+    to {
+        border-left-color: #e74c3c;
+    }
+}
+
+.pedido-card h3 {
+    margin: 0 0 10px 0;
+    color: #ffcc00;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-entrega {
+    color: #bbb;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.itens-lista {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 10px 0;
+    border: 1px solid #333;
+}
+
+
+/* Estilo para a Observação dentro do tema escuro */
+
+.obs-alerta {
+    background: #332b00;
+    color: #ffcc00;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0;
+    border: 1px solid #444;
+}
+
+.total-container {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #27ae60;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.btn-imprimir {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+}
+
+@media print {
+    .btn-imprimir,
+    h2 {
+        display: none;
+    }
+    body {
+        background: white;
+        color: black;
+    }
+    .pedido-card {
+        border: 1px solid #000;
+        background: white;
+        color: black;
+        box-shadow: none;
+    }
+    .itens-lista {
+        background: white;
+        border: 1px solid #ccc;
+        color: black;
+    }
+}
