@@ -84,7 +84,7 @@
       "title": "Pizza Havaiana - Doce (G)",
       "price": 90.0,
       "oldPrice": 100.0,
-      "categoria": "pizza-doce",
+      "categoria": "pizza",
       "ingredientes": "Chocolate branco, abacaxi e morango",
       "image": "/imagens/pizza.jpg"
     },
@@ -92,7 +92,7 @@
       "title": "Pizza Brasileira - Doce (G)",
       "price": 90.0,
       "oldPrice": 100.0,
-      "categoria": "pizza-doce",
+      "categoria": "pizza",
       "ingredientes": "Chocolate preto, abacaxi e morango",
       "image": "/imagens/pizza.jpg"
     },
@@ -100,7 +100,7 @@
       "title": "Pizza Sensação - Doce (G)",
       "price": 90.0,
       "oldPrice": 100.0,
-      "categoria": "pizza-doce",
+      "categoria": "pizza",
       "ingredientes": "Chocolate preto e morango",
       "image": "/imagens/pizza.jpg"
     },
@@ -108,11 +108,12 @@
       "title": "Pizza Banana Nevada - Doce (G)",
       "price": 90.0,
       "oldPrice": 100.0,
-      "categoria": "pizza-doce",
+      "categoria": "pizza",
       "ingredientes": "Chocolate branco, banana e canela",
       "image": "/imagens/pizza.jpg"
     }
   ]
 }
+
 
 
